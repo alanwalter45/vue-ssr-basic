@@ -1,0 +1,19 @@
+{
+    "name": "ssr",
+    "version": "1.0.0",
+    "description": "Ejemplo SSR",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "alanwalter45 | alanwalter45@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.1",
+        "vue": "^3.2.39",
+        "vue-server-renderer": "^2.7.10"
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue SSR</title>
+    </head>
+    <body>
+        <h1>Server alternative</h1>
+        <div id="app"><button class="btn btn-primary">1</button></div>
+        <script type="importmap">
+            {
+                "imports": {
+                    "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+                }
+            }
+        </script>
+        <script type="module">
+            import { createSSRApp } from "vue";
+            const createApp = () => {
+                return createSSRApp({
+                    data: () => ({ count: 1 }),
+                    template: `<button class="btn btn-primary" @click="count++">{{ count }}</button>`,
+                });
+            };
+            document.addEventListener("DOMContentLoaded", () => {
+                const app = createApp();
+                app.mount("#app");
+            });
+        </script>
+    </body>
+</html>
